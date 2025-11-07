@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pawan Kalyan | Power Star</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap');
 
     * {
       margin: 0;
@@ -17,115 +17,91 @@
       background-color: #0d0d0d;
       color: #fff;
       font-family: 'Open Sans', sans-serif;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
+    /* ---------- HERO SECTION ---------- */
     header {
       height: 100vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-        url('https://wallpapers.com/images/hd/pawan-kalyan-heroic-pose-7rjvhm77edlqwhqg.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+        url('https://wallpapercave.com/wp/wp13058421.jpg') center/cover no-repeat;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       text-align: center;
+      position: relative;
+      padding: 0 10%;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(transparent, #0d0d0d);
     }
 
     header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #e50914;
-      letter-spacing: 2px;
       text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 25px rgba(229, 9, 20, 0.8);
+      animation: fadeInDown 1.2s ease-out;
     }
 
     header p {
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       font-size: 1.2rem;
-      color: #ddd;
-      max-width: 600px;
+      color: #eee;
+      max-width: 650px;
+      line-height: 1.6;
+      animation: fadeInUp 1.8s ease-out;
     }
 
     .btn {
       margin-top: 2rem;
-      padding: 0.8rem 2rem;
+      padding: 1rem 2.5rem;
       border: 2px solid #e50914;
       background: transparent;
       color: #e50914;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: 0.3s;
       font-weight: bold;
+      letter-spacing: 1px;
+      border-radius: 50px;
+      transition: 0.3s;
+      animation: fadeInUp 2.2s ease-out;
+      cursor: pointer;
     }
 
     .btn:hover {
       background: #e50914;
       color: #fff;
+      box-shadow: 0 0 25px rgba(229, 9, 20, 0.6);
       transform: scale(1.05);
     }
 
-    section {
-      padding: 80px 10%;
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #e50914;
-      border-left: 5px solid #e50914;
-      padding-left: 10px;
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .about p {
-      line-height: 1.8;
-      color: #ccc;
-      max-width: 800px;
-    }
-
-    .movies {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 2rem;
-    }
-
-    .movie {
-      background: #1a1a1a;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .movie:hover {
-      transform: scale(1.05);
-    }
-
-    .movie img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-
-    .movie h3 {
-      text-align: center;
-      padding: 10px;
-      font-size: 1.1rem;
-      color: #fff;
-    }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 30px 0;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    footer span {
-      color: #e50914;
-      font-weight: bold;
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -133,41 +109,7 @@
   <header>
     <h1>Pawan Kalyan</h1>
     <p>“Power Star — Actor, Politician, Leader. A man of strength, vision, and inspiration.”</p>
-    <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">Know More</button>
+    <button class="btn">Know More</button>
   </header>
-
-  <section id="about" class="about">
-    <h2>About Pawan Kalyan</h2>
-    <p>
-      Pawan Kalyan, fondly known as the Power Star, is one of the most celebrated actors and influential politicians in Telugu cinema and Andhra Pradesh politics. 
-      Known for his charismatic presence and strong screen persona, he has inspired millions through his films and his leadership.
-      <br><br>
-      Apart from being a dynamic actor, Pawan Kalyan founded the Jana Sena Party in 2014 and continues to be a voice of the people, advocating for justice, equality, and reform.
-    </p>
-  </section>
-
-  <section class="movies">
-    <h2>Popular Movies</h2>
-    <div class="movie">
-      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Attarintiki_Daredi_poster.jpg" alt="Attarintiki Daredi">
-      <h3>Attarintiki Daredi</h3>
-    </div>
-    <div class="movie">
-      <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Gabbar_Singh_poster.jpg" alt="Gabbar Singh">
-      <h3>Gabbar Singh</h3>
-    </div>
-    <div class="movie">
-      <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/Vakeel_Saab_poster.jpg" alt="Vakeel Saab">
-      <h3>Vakeel Saab</h3>
-    </div>
-    <div class="movie">
-      <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/Bheemla_Nayak_poster.jpg" alt="Bheemla Nayak">
-      <h3>Bheemla Nayak</h3>
-    </div>
-  </section>
-
-  <footer>
-    Made with ❤️ by <span>Fans of Power Star Pawan Kalyan</span>
-  </footer>
 </body>
 </html>
